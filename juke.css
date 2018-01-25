@@ -4,18 +4,62 @@ body {
 }
 
 .jukebox {
-	width: 400px;
-	height: 150px;
+	width: 600px;
+	height: 170px;
 	margin: 0 auto;
 	margin-top: 100px;
-	background-color: red;
+	background-color: green;
+	box-shadow: : 0 0 6px 2px blue;
 	color: white;
 }
 
-.songTitle {
+.art {
+	float: left;
+	margin-top: 6px;
+	margin-left: 6px;
+
+}
+
+.player {
+	float: right;
+	margin: 10px;
+}
+
+.controllers{
+	clear: both;
+	/*display: table;*/
+}
+
+.controllers*{
+	vertical-align: middle;
+	margin-right: 2px;
+}
+
+.song-title {
 	width: 250px;
 	padding: 5px 0px 5px 0px;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	overflow: hidden;
+}
+
+.song-slider{
+	width: 300px
+}
+
+.volume-slider{
+	width: 100px;
+	margin-left: 5px;
+}
+
+
+
+.current-time{
+	float: left
+	font-size: 10px;
+}
+
+.duration{
+	float: right;
+	font-size: 10px;
 }
