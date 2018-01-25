@@ -1,3 +1,13 @@
+// var image = document.getElementById('image')
+// image.addEventListener('click', function(){
+// 	image.style.backgroundImage = "url('images/004-play-button.png')"
+// })
+
+// image.addEventListener('click', function(){
+// 	image.style.backgroundImage = "url('images/003-pause.png')"
+// })
+
+
 var songs = ['Ambush.mp3', 'Black Bird.mp3', 'Breakdown.mp3', 'Iron Bacon.mp3']
 
 var songTitle = document.getElementById('songTitle');
@@ -8,6 +18,11 @@ var volumeSlider = document.getElementById('volumeSlider');
 var nextSongTitle = document.getElementById('nextSongTitle');
 
 var song = new Audio();
+var img = new Image();
+
+
+
+img.src = 'images/001-next.png'
 var currentSong = 0;
 
 window.onload = loadSong;
@@ -26,15 +41,21 @@ setInterval(updateSongSlider, 1000)
 function updateSongSlider(){
 	var c = Math.round(song.currentTime);
 	songSlider.value = c;
-	currentTime.textContent = c;
+	currentTime.textContent = changeDigits(c);
 }
 
-
+function changeDigits(secs){
+	var min = Math.floor(secs/60);
+	var sec = secs % 60;
+	min = (min<10) ? "0" + min : min;
+	sec = (sec<10) ? "0" + sec : sec;
+	return (min + ":" + sec);
+}
 
 function showDuration(){
 	var d = Math.floor(song.duration);
 	songSlider.setAttribute("max", d);
-	duration.textContent = d;
+	duration.textContent = changeDigits(d);
 }
 
 function playOrPauseSong(img){

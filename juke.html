@@ -7,24 +7,29 @@
 <body>
 	<div class="jukebox">
 		<div class="art">
+			<!-- <div id='image' style='width:100px; height:100px; border:2px solid'></div> -->
+			<!-- <hr> -->
 			<img src="images/musiclogo.jpeg">
 			</div>
 			<div class="player">
 				<div id="songTitle" class="song-title">My song title goes here. Blah blah blah.</div>
 				<input type="range" min="0" max="" step="1" onchange="seekSong()" id="songSlider" class="song-slider"/>
-				<div id="currentTime" class="current-time">00:00</div>
-				<div id="duration" class="duration">00:00</div>
+				<div>
+					<div id="currentTime" class="current-time">00:00</div>
+					<div id="duration" class="duration">00:00</div>
 			</div>
 			<div class="controllers">
 				<img src="images/002-previous.png" onclick="previous();"/>
-				<img src="images/003-pause.png" onclick="playOrPauseSong();"/>
+				<img src="images/004-play-button.png" onclick="playOrPauseSong(this);"/>
+				<!-- <div id='image' style='width:25px; height:25px; border:2px solid'></div> -->
 				<img src="images/001-next.png" onclick="next();"/>
-				<img src="images/volumeUp.png"/>
-				<input id="volumeSlider" class="volume-slider" type="range" min="0" max="1" step="0.01" onchange="adjustVolume()"/>
 				<img src="images/volumeDown.png"/>
+				<input id="volumeSlider" class="volume-slider" type="range" min="0" max="1" step="0.01" onchange="adjustVolume()"/>
+				<img src="images/volumeUp.png"/>
 			</div>
 			<div id="nextSongTitle" class="song-title"><b>Next Song: </b>Next song title here...</div>
 	</div>
+</div>
 
 <script type="text/javascript" src="juke.js"></script>
 </body>
