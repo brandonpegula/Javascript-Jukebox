@@ -36,3 +36,24 @@ function showDuration(){
 	songSlider.setAttribute("max", d);
 	duration.textContent = d;
 }
+
+function playOrPauseSong(img){
+	if(song.paused){
+		song.play();
+		img.src = "images/003-pause.png";
+	}else{
+		song.pause();
+		img.src = "images/004-play-button.png";
+	}
+}
+
+function next(){
+	currentSong = currentSong + 1 % songs.length;
+	loadSong();
+}
+
+function previous(){
+	currentSong = currentSong - 1;
+	currentSong = (currentSong < 0) ? songs.length - 1 : currentSong;
+	loadSong();
+}

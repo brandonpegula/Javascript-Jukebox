@@ -7,7 +7,7 @@
 <body>
 	<div class="jukebox">
 		<div class="art">
-			<img src="Photos/musiclogo.jpeg">
+			<img src="images/musiclogo.jpeg">
 			</div>
 			<div class="player">
 				<div id="songTitle" class="song-title">My song title goes here. Blah blah blah.</div>
@@ -16,17 +16,17 @@
 				<div id="duration" class="duration">00:00</div>
 			</div>
 			<div class="controllers">
-				<img src="Photos/002-previous.png" onclick="previous();"/>
-				<img src="Photos/004-play-button.png" onclick="playOrPauseSong();"/>
-				<img src="Photos/001-next.png" onclick="next();"/>
-				<img src="Photos/volumeUp.png"/>
+				<img src="images/002-previous.png" onclick="previous();"/>
+				<img src="images/003-pause.png" onclick="playOrPauseSong();"/>
+				<img src="images/001-next.png" onclick="next();"/>
+				<img src="images/volumeUp.png"/>
 				<input id="volumeSlider" class="volume-slider" type="range" min="0" max="1" step="0.01" onchange="adjustVolume()"/>
-				<img src="Photos/volumeDown.png"/>
+				<img src="images/volumeDown.png"/>
 			</div>
 			<div id="nextSongTitle" class="song-title"><b>Next Song: </b>Next song title here...</div>
 	</div>
 
-
+<img src="images/004-play-button.png">
 <script type="text/javascript" src="juke.js"></script>
 </body>
 </html>
