@@ -25,14 +25,16 @@ body {
 	margin: 10px;
 }
 
-.controllers{
-	clear: both;
-	/*display: table;*/
-}
-
-.controllers*{
+.controllers *{
 	vertical-align: middle;
 	margin-right: 2px;
+	margin-top: 10px;
+}
+
+.controllers{
+	clear: both;
+	display: table;
+
 }
 
 .song-title {
@@ -55,11 +57,15 @@ body {
 
 
 .current-time{
-	float: left
-	font-size: 10px;
+	float: left;
+	font-size: 20px;
 }
 
 .duration{
 	float: right;
-	font-size: 10px;
+	font-size: 20px;
+}
+
+#nextSongTitle{
+	margin-top: 15px;
 }

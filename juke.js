@@ -8,15 +8,15 @@ var volumeSlider = document.getElementById('volumeSlider');
 var nextSongTitle = document.getElementById('nextSongTitle');
 
 var song = new Audio();
-var img = new Image();
+// var img = new Image();
 var currentSong = 0;
 
 window.onload = loadSong;
 
 function loadSong () {
 	song.src = "songs/" + songs[currentSong];
-	songTitle.textContent = (currentSong + 1) + ". " + songs[currentSong]
-	nextSongTitle.innnerHTML = "<b>Next Song: </b>" + songs[currentSong + 1 % songs.length];
+	songTitle.textContent = (currentSong + 1) + ". " + songs[currentSong];
+	nextSongTitle.innerHTML = "<b>Next Song: </b>" + songs[currentSong + 1 % songs.length];
 	// song.playOrPauseSong
 	song.volume = volumeSlider.value;
 	song.play();
