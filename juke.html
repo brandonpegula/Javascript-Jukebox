@@ -1,16 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>jukebox project</title>
 	<link rel="stylesheet" type="text/css" href="juke.css">
 </head>
 <body>
 	<div class="jukebox">
-		<div id="Track 1">Track1</div>
-		<div id="Track 2"></div>
-		<div id="Track 3"></div>
-		<div id="Track 4"></div>
+		<div class="art">
+			
+			<img src="images/speaker.jpeg">
+			</div>
+			<div class="player">
+				<div id="songTitle" class="song-title">Press the POWER button to begin.</div>
+				<input type="range" min="0" max="" step="1" onchange="seekSong()" id="songSlider" class="song-slider"/>
+				<div>
+					<div id="currentTime" class="current-time">00:00</div>
+					<div id="duration" class="duration">00:00</div>
+			</div>
+			<div class="controllers">
+				<img src="images/power.png" onclick="loadMusic();"/>
+				<img src="images/002-previous.png" onclick="previous();"/>
+				<img src="images/004-play-button.png" onclick="playOrPauseSong(this);"/>
+				<img src="images/001-next.png" onclick="next();"/>
+				<img src="images/volumeDown.png"/>
+				<input id="volumeSlider" class="volume-slider" type="range" min="0" max="1" step="0.01" onchange="adjustVolume()"/>
+				<img src="images/volumeUp.png"/>
+			</div>
+			<div id="nextSongTitle" class="song-title"></div>
 	</div>
+</div>
 
 <script type="text/javascript" src="juke.js"></script>
 </body>
