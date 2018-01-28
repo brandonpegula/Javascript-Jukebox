@@ -1,4 +1,5 @@
 var songs = ['Ambush.mp3', 'Black Bird.mp3', 'Breakdown.mp3', 'Iron Bacon.mp3']
+var images = ['musiclogo.jpeg', 'git.png', 'linkedin.png', 'git.png']
 
 var songTitle = document.getElementById('songTitle');
 var songSlider = document.getElementById('songSlider');
@@ -6,24 +7,44 @@ var currentTime = document.getElementById('currentTime');
 var duration = document.getElementById('duration');
 var volumeSlider = document.getElementById('volumeSlider');
 var nextSongTitle = document.getElementById('nextSongTitle');
+// var loadMusic = document.getElementById('loadMusic');
 
 var song = new Audio();
-// var img = new Image();
+var img = new Image();
 var currentSong = 0;
 
-window.onload = loadSong;
+
+// loadMusic.onclick = loadSong;
+
+
+function loadMusic(){
+	loadSong();
+}
 
 function loadSong () {
 	song.src = "songs/" + songs[currentSong];
+	img.src ="images/" + images[currentSong];
 	songTitle.textContent = (currentSong + 1) + ". " + songs[currentSong];
 	nextSongTitle.innerHTML = "<b>Next Song: </b>" + songs[currentSong + 1 % songs.length];
-	// song.playOrPauseSong
+	// nextSongTitle.innerHTML = "<b>Next Song: </b>" + songs[(currentSong > 3) ? 0 % songs.end : 0];
 	song.volume = volumeSlider.value;
-	song.play();
+	song.pause();
+	
 	setTimeout(showDuration, 1000);
 }
 
 setInterval(updateSongSlider, 1000)
+
+
+// added function below
+
+// function nextSong(){
+// 	if(nextSongTitle){
+// 		"<b>Next Song: </b>" + songs[currentSong + 1 % songs.length];
+// 	// }else{
+// 		"<b>Next Song: </b>" + (currentSong > 3) ? 0 % songs.length : currentSong;
+// 	}
+// }
 
 function updateSongSlider(){
 	var c = Math.round(song.currentTime);
@@ -60,14 +81,18 @@ function playOrPauseSong(img){
 
 function next(){
 	currentSong = currentSong + 1 % songs.length;
+	currentSong = (currentSong > 3) ? 0 % songs.length : currentSong;
 	loadSong();
+
 }
 
 function previous(){
 	currentSong = currentSong - 1;
 	currentSong = (currentSong < 0) ? songs.length - 1 : currentSong;
 	loadSong();
+
 }
+
 
 function seekSong(){
 	song.currentTime = songSlider.value;
